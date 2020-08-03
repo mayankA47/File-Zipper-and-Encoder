@@ -125,7 +125,10 @@ class HuffmanCoder{
         this.ind = 0;
         console.log("tree is " + data[0]);
         const huffman_decoder = this.destringify(data[0]);
-        const text = data[2];
+        var text = data[2];
+        //if encoded text had <>
+        for(let i=3;i<data.length;i++)
+            text = text + "<>" + data[i];
 
         let binary_string = "";
         for(let i=0;i<text.length;i++){
